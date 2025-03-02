@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tournoi Five Futuriste</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="style.css">
     <!-- Ajout de Font Awesome (pour les icônes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -68,7 +68,7 @@
             <div class="inscription-container">
                 <p>Prix : 6€ (5€ + 1€ sadaqa)</p>
                 <p><strong>Note:</strong> Les inscriptions sont enregistrées. Le site est mis à jour dynamiquement (pas d'email de confirmation).</p>
-                <!-- ... (les blocs d'équipe restent inchangés) ... -->
+                <!-- ... (les blocs d'équipe restent inchangés, mais sans les boutons "Rejoindre") ... -->
                  <div class="equipe">
                     <p>Équipe 1</p>
                     <a href="{{ url_for('inscription', equipe='equipe1') }}" class="cta-button">Rejoindre</a>
@@ -112,6 +112,6 @@
     <footer>
         <p>© 2024 Nom du Tournoi. Tous droits réservés.</p>
     </footer>
-     <script src="{{ url_for('static', filename='script.js') }}"></script>
+     <script src="script.js"></script>
 </body>
 </html>
