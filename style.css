@@ -1,0 +1,249 @@
+/* Réinitialisation (reset) des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif; /* Remplace par une police "app-like" si tu veux (ex: Roboto, Open Sans, Lato...) */
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+    padding-bottom: 60px; /* Important : laisse de la place pour la barre de navigation fixe */
+}
+
+/* Barre de navigation fixe en bas */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    border-top: 1px solid #444;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.75rem 0;
+    z-index: 100; /* Pour qu'elle reste au-dessus du contenu */
+}
+
+.bottom-nav a {
+    color: #aaa;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+}
+
+.bottom-nav a i {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.bottom-nav a.active {
+    color: #00aaff; /* Couleur différente pour l'élément actif */
+}
+
+/* Section "hero" (accroche principale) */
+#hero {
+    background: url('') center/cover no-repeat; /* Remplace '' par le chemin de ton image de fond */
+    height: 50vh; /* Adapte la hauteur si besoin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem; /* Réduit le padding sur mobile */
+}
+.hero-content {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem; /* Réduit le padding */
+    border-radius: 10px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem; /* Réduit la taille de la police */
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #00aaff;
+    color: #fff;
+    padding: 0.8rem 1.5rem; /* Réduit le padding */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #0077cc;
+}
+
+/* Section Information */
+#roadmap {
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+#inscription{
+     margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.roadmap-container {
+    display: flex;
+    flex-direction: row; /* Disposition horizontale par défaut */
+    align-items: center;
+    justify-content: space-between; /* Espace les éléments */
+    width: 100%;
+    max-width: 800px; /* Limite la largeur */
+    margin: 0 auto; /* Centre le conteneur */
+    flex-wrap: wrap;
+}
+
+.match-group {
+    display: flex;
+    flex-direction: column; /* Disposition verticale pour les matchs */
+    align-items: center;
+    margin: 0 10px; /* Espacement entre les groupes de matchs */
+    min-width: 80px; /* Largeur minimale pour éviter que ça ne soit trop serré */
+}
+.match-group.perdant{
+    flex-direction:row;
+    width: 90%;
+}
+.match {
+    border: 1px solid #00aaff;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem; /* Espacement entre les matchs d'un même groupe */
+    border-radius: 4px;
+    min-width: 60px; /* Largeur minimale pour les cases de match */
+    background-color: #222;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: #00aaff;
+    margin: 0 10px;
+}
+
+.inscription-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.equipe {
+    margin: 1rem 0;
+    border: 1px solid #444;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 90%; /* Prend une largeur plus grande sur mobile */
+    max-width: 500px; /* Limite la largeur sur les grands écrans */
+}
+
+.membres {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+}
+
+.membres li {
+    margin-bottom: 0.2rem;
+    min-height: 1.2em;
+}
+
+/* Style pour les pages d'inscription */
+.form-container {
+    max-width: 95%; /* Prend presque toute la largeur sur mobile */
+    margin: 1rem auto;  /* Centre et réduit la marge */
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.form-container h2 {
+    font-size: 1.8rem; /* Réduit la taille */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 0.8rem; /* Réduit la marge */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem; /* Réduit la marge */
+    font-size: 0.9rem; /* Réduit la taille */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"] {
+    width: 100%; /* Prend toute la largeur */
+    padding: 0.6rem; /* Réduit le padding */
+    border: 1px solid #444;
+    background-color: #222;
+    color: #fff;
+    border-radius: 4px; /* Réduit le rayon */
+    font-size: 0.9rem;
+}
+
+/* Media query pour les écrans plus grands (tablettes, ordinateurs) */
+@media (min-width: 768px) {
+    #hero {
+        padding: 2rem;
+    }
+
+    .hero-content {
+        padding: 2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    .match {
+        width: auto;
+    }
+
+    .equipe {
+       width: 45%;
+    }
+     .inscription-container{
+        flex-direction: row;
+    }
+    .form-container{
+        max-width: 600px;
+    }
+}
+    footer {
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+        border-top: 1px solid #444;
+}
