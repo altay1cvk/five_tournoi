@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournoi Five Futuriste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Ajout de Font Awesome (pour les icônes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Barre de navigation (en bas de l'écran) -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active"><i class="fas fa-home"></i> Accueil</a>
+        <a href="{{ url_for('inscription', equipe='equipe1') }}" class="nav-item"><i class="fas fa-user-plus"></i> Inscription</a>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Tournoi de Five</h2>
+                <p>Arbouans - Street Soccer</p>
+                <p>14h00 - 15h00</p>
+            </div>
+        </section>
+
+        <section id="roadmap">
+            <h2>Roadmap des Matchs</h2>
+            <div class="roadmap-container">
+                <div class="match-group">
+                    <div class="match">Équipe 1</div>
+                    <div class="match">Équipe 2</div>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="match-group">
+                    <div class="match">Vainqueur 1</div>
+                 </div>
+                <div class="arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                  <div class="match-group">
+                    <div class="match">Finale</div>
+                 </div>
+                 <div class="arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="match-group">
+                    <div class="match">Vainqueur 2</div>
+                 </div>
+                <div class="arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="match-group">
+                    <div class="match">Équipe 3</div>
+                    <div class="match">Équipe 4</div>
+                </div>
+            </div>
+             <div class="match-group perdant">
+                    <div class="match">Match per</div>
+                    <p>Perdant 1 vs Perdant 2</p>
+                </div>
+        </section>
+
+        <section id="inscription">
+            <h2>Inscription</h2>
+            <div class="inscription-container">
+                <p>Prix : 6€ (5€ + 1€ sadaqa)</p>
+                <p><strong>Note:</strong> Les inscriptions sont enregistrées. Le site est mis à jour dynamiquement (pas d'email de confirmation).</p>
+                <!-- ... (les blocs d'équipe restent inchangés) ... -->
+                 <div class="equipe">
+                    <p>Équipe 1</p>
+                    <a href="{{ url_for('inscription', equipe='equipe1') }}" class="cta-button">Rejoindre</a>
+                    <ul class="membres">
+                        {% for membre in equipes.equipe1 %}
+                          <li>{{ membre.prenom }} {{ membre.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="equipe">
+                    <p>Équipe 2</p>
+                    <a href="{{ url_for('inscription', equipe='equipe2') }}" class="cta-button">Rejoindre</a>
+                    <ul class="membres">
+                        {% for membre in equipes.equipe2 %}
+                          <li>{{ membre.prenom }} {{ membre.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="equipe">
+                    <p>Équipe 3</p>
+                    <a href="{{ url_for('inscription', equipe='equipe3') }}" class="cta-button">Rejoindre</a>
+                    <ul class="membres">
+                        {% for membre in equipes.equipe3 %}
+                           <li>{{ membre.prenom }} {{ membre.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="equipe">
+                    <p>Équipe 4</p>
+                    <a href="{{ url_for('inscription', equipe='equipe4') }}" class="cta-button">Rejoindre</a>
+                    <ul class="membres">
+                        {% for membre in equipes.equipe4 %}
+                           <li>{{ membre.prenom }} {{ membre.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Nom du Tournoi. Tous droits réservés.</p>
+    </footer>
+     <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

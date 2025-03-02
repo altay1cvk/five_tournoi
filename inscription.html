@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Équipe {{ equipe }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Ajout de Font Awesome (pour les icônes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<main>
+    <div class="form-container">
+        <h2>Inscription Équipe {{ equipe }}</h2>
+
+        {% if erreur %}
+            <p style="color: red;">{{ erreur }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('inscription') }}" method="post">
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" required pattern="[0-9]{10}" title="Veuillez entrer un numéro de téléphone à 10 chiffres">
+            </div>
+            <div class="form-group">
+                <label for="age">Âge :</label>
+                <input type="number" id="age" name="age" required min="1" max="120">
+            </div>
+            <!-- Champ caché pour l'équipe -->
+            <input type="hidden" name="equipe" value="{{ equipe }}">
+            <button type="submit" class="cta-button">Confirmer l'inscription</button>
+        </form>
+        <p><a href="{{ url_for('index') }}">Retour à l'accueil</a></p>
+    </div>
+</main>
+   <!-- Barre de navigation (en bas de l'écran) -->
+    <nav class="bottom-nav">
+        <a href="{{ url_for('index') }}" class="nav-item"><i class="fas fa-home"></i> Accueil</a>
+        <a href="# target="_self" class="nav-item active"><i class="fas fa-user-plus"></i> Inscription</a>
+    </nav>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
