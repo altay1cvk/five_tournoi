@@ -1,1 +1,2 @@
-requirements.txt
+Flask==3.0.0
+tinydb==4.8.0
